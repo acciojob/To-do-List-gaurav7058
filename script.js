@@ -5,11 +5,13 @@ document.getElementById("addTodoBtn").addEventListener("click",handler)
 function handler(){
     const inputValue=document.getElementById("newTodoInput").value;
     const box=document.getElementById("todoList");
-
+    const li=document.createElement("li");
+    box.append(li)
     arr.push(inputValue)
-    box.innerHTML="";
+    li.innerText="";
     arr.map((item)=>{
-        box.innerHTML+= `<li>${item}</li>`
+        li.innerText= `${item}`
         document.getElementById("newTodoInput").value=""
     })
+    
 }
