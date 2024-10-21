@@ -1,5 +1,7 @@
-//your code here
 let arr=[]
+document.getElementById("addTodoBtn").addEventListener("click",handler)
+
+
 function handler(){
     const inputValue=document.getElementById("newTodoInput").value;
     const box=document.getElementById("todoList");
