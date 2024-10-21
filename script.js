@@ -1,17 +1,16 @@
-let arr=[]
-document.getElementById("addTodoBtn").addEventListener("click",handler)
+document.getElementById('addTodoBtn').addEventListener('click', function() {
+  const todoInput = document.getElementById('newTodoInput');
+  const todoText = todoInput.value.trim(); // Get input value and remove extra spaces
 
+  // Check if the input is not empty
+  if (todoText !== "") {
+    const todoList = document.getElementById('todoList');
+    const newTodoItem = document.createElement('li');
+    newTodoItem.textContent = todoText; // Set the text of the new todo item
+    todoList.appendChild(newTodoItem);  // Add the new item to the list
 
-function handler(){
-    const inputValue=document.getElementById("newTodoInput").value;
-    const box=document.getElementById("todoList");
-    const li=document.createElement("li");
-    box.append(li)
-    arr.push(inputValue)
-    li.innerText="";
-    arr.map((item)=>{
-        li.innerText= `${item}`
-        document.getElementById("newTodoInput").value=""
-    })
-    
-}
+    todoInput.value = ""; // Clear the input after adding the todo
+  } else {
+    alert("Please enter a valid todo item.");
+  }
+});
